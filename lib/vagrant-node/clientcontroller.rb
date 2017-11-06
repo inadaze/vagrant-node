@@ -49,7 +49,7 @@ module Vagrant
 			  #Generating a random identifier for process
 			  rpid=rand(1000000)
 
-			  pid = fork do
+			  #pid = fork do
 			    begin
 			     @db.create_queued_process(rpid)
 			     res = yield
@@ -58,7 +58,7 @@ module Vagrant
 			    rescue Exception => e
 			      @db.set_queued_process_error(rpid,e)
 			    end
-			  end
+			  #end
 
 			  rpid
 			end

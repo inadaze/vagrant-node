@@ -29,7 +29,7 @@ module ServerAPI
 		
 		
 		#before '^.*(^login).*' do
-	before %r{^(?!#{RouteManager.login_route}$)} do			
+	before %r{(?!#{RouteManager.login_route})} do			
 	  content_type :json
 			  
         token  = ""
@@ -59,7 +59,7 @@ module ServerAPI
 			  
 	end
 	
-	after %r{^(?!#{RouteManager.login_route}$)} do
+	after %r{(?!#{RouteManager.login_route})} do
 	 
 	 cookie=request.cookies[COOKIE_TOKEN_ID]
 	 
