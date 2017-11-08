@@ -7,14 +7,14 @@ With this plugin installed, the Vagrant environment can perform requests, that y
 	
 This plugin has been developed in the context of the [Catedra SAES](http://www.catedrasaes.org) of the University of Murcia(Spain).
 
-##Installation
+## Installation
 Requires Vagrant (minimum version 1.2.2) and MySql Server
 
 ```bash
 $ vagrant plugin install vagrant-node
 ```
 
-##Configuration 
+## Configuration 
 
 There is a configuration file located at ~/.vagrant.d/data/config.yml, where you can update the mysql connection settings.
 
@@ -26,7 +26,7 @@ dbuser: root
 dbpassword: root
 ```
 
-##Usage
+## Usage
 In order to start the service provided by *vagrant-node* do:
 
 ```bash
@@ -55,7 +55,7 @@ $ vagrant nodeserver passwd
 ```
 
 
-##Errors
+## Errors
 
 ### Installing gem mysql2 on ruby 2.4 fails with error message : 
 
@@ -71,13 +71,13 @@ gem install mysql2 --platform ruby -- '--with-mysql-lib="C:\Program Files\MySQL\
 NOTE : make sure to uninstall mysql2-0.4.9-x64-mingw32 if you have two installed
 
 
-###update required gem mysql2 for vagrant-node in gemspec
+### update required gem mysql2 for vagrant-node in gemspec
 
 spec.add_dependency "mysql2", '~> 0.4.9'
 
 
 
-##Debugging Notes:
+## Debugging Notes:
 
 
 To see output in a blocking thread, I suggest modifying server.rb method self.run and replace
