@@ -25,13 +25,13 @@ PATH
   specs:
     vagrant-node (1.1.4.1)
       facter
-      json (~> 1.8.3)
+      json (= 2.0.4)
       mysql2 (~> 0.4.9)
-      rack (~> 2.0.3)
+      rack (= 2.0.3)
       ruby2ruby (~> 2.0.6)
       ruby_parser (~> 3.2.2)
       rubyzip (>= 1.0.0)
-      sinatra (~> 2.0.0)
+      sinatra (= 2.0.0)
       sys-cpu
       usagewatch
       zip-zip
@@ -57,7 +57,7 @@ GEM
       domain_name (~> 0.5)
     httpclient (2.8.3)
     i18n (0.8.0)
-    json (1.8.6)
+    json (2.0.4)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
