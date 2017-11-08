@@ -22,10 +22,10 @@ This plugin has been developed in the context of the Catedra SAES of the Univers
 
   spec.rubyforge_project = "vagrant-node"
 
-  spec.add_dependency "sinatra"  
+  spec.add_dependency "sinatra", "~>2.0.0"  
   #spec.add_dependency "json", "~> 2.0.4"
   spec.add_dependency "json", "~> 1.8.3"
-  spec.add_dependency "rack"
+  spec.add_dependency "rack", "~>2.0.3"
   #IMPORTANT Mysql DEV libraries must be installed on system
   spec.add_dependency "mysql2", '~> 0.4.9'  
   spec.add_dependency "usagewatch"  

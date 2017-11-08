@@ -27,11 +27,11 @@ PATH
       facter
       json (~> 1.8.3)
       mysql2 (~> 0.4.9)
-      rack
+      rack (~> 2.0.3)
       ruby2ruby (~> 2.0.6)
       ruby_parser (~> 3.2.2)
       rubyzip (>= 1.0.0)
-      sinatra
+      sinatra (~> 2.0.0)
       sys-cpu
       usagewatch
       zip-zip

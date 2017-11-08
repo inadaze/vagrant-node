@@ -13,25 +13,42 @@ module Vagrant
   module Node
 		module ServerAPI
 			class ServerManager
+
+				
 				PIDFILENAME = "server.pid"	
 				BIND_ADDRESS = "0.0.0.0"
 									
 				def self.run(pid_path,data_path,env,port=3333)
-					
 					check_password(data_path)
 					
 					pid_file = File.join(pid_path,PIDFILENAME)
+
+					if File.exists?(pid_file)
+						pid = File.read(pid_file).to_i
+
+						begin
+  						Process.kill( 'KILL', pid )											
+						rescue Errno::ESRCH
+													
+						end
+						PidFile.delete(pid_file)
+					end
 					
-					pid = spawn("ruby E:\\git\\vagrant-node\\lib\\vagrant-node\\server_sub.rb " + data_path.to_s + " " + port.to_s)
+
+					script = File.join(File.dirname(__FILE__), 'server_sub.rb')
+					pid = spawn("ruby " + script + " " + data_path.to_s + " " + port.to_s)
 					PidFile.create(pid_file,pid)
 
 					Process.detach pid
+
 				end
-				
+			
+			
+
 				def self.stop(pid_path,data_path)
 					
 						
-						# check_password(data_path,passwd);
+						#check_password(data_path,passwd);
 						
 						
 						pid_file = File.join(pid_path,PIDFILENAME)
@@ -71,7 +88,7 @@ module Vagrant
 					end
 				  true
 				end
-				
+
 					
 			end
 		end
